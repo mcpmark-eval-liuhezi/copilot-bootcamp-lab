@@ -23,7 +23,23 @@ normal GitHub workflow. Throwaway repo — safe to delete after the session.
     `pytest`, run `pytest`
 - The workflow file was double-checked and is confirmed present on `main`.
 
-## Lab flow
+## Lab flow — results
 
-- Feature branch: `feature/greeting`, containing `greet.py`
-- Results recorded in the next section once everything is in place.
+- **Branch:** `feature/greeting` — contains `greet.py` with `greet(name)`
+  - `greet('World')` → `"Hello, World!"`
+  - `greet('')` → `"Hello, stranger!"`
+- **Pull request:** #1 — "Add greeting module" (`feature/greeting` → `main`)
+- **Issue:** #2 — "Add unit tests for the greeting module"
+  - Duplicate check done before filing: no existing issue matched.
+  - Issue types are not available on this account/org (403 from the API), so no
+    issue type was tagged.
+  - Copilot assignment: **failed** — Copilot is not available as an assignee for
+    this issue (Copilot coding agent not enabled for this repo/org). The issue has
+    a comment pointing Copilot at the PR branch for context anyway.
+- **Workflow list:** shows exactly one workflow — "CI" at `.github/workflows/ci.yml`,
+  state `active`. It has already run (4 runs): the latest, on the PR, failed with
+  pytest exit code 5 ("no tests ran") because no tests exist yet — which is exactly
+  what Issue #2 asks Copilot to fix.
+- **Review dry run:** a draft review with one line comment on `greet.py` was started
+  on PR #1 and then discarded without submitting. PR #1 ends up with **no** reviews
+  and no review comments from this session.
